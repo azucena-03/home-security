@@ -115,8 +115,7 @@ body{
 .nav{
     height: 3rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 .footer__logo,
 .nav__logo{
@@ -127,7 +126,8 @@ body{
 }
 .nav__list{
     display: flex;
-    column-gap: 2.625rem;
+    flex-direction: column;
+    align-items: center;
 }
 .nav__item{
     position: relative;
@@ -145,18 +145,15 @@ body{
 }
 .conocenos__container,
 .hero__container{
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 1rem;
+    row-gap: 2rem;
 }
 .hero{
     padding: 6rem 0 2.5rem;
 }
 .hero__data{
     order: 2;
-    text-align: end;
     display: flex;
     flex-direction: column;
-    align-items: end;
     justify-content: center;
 }
 .hero__title{
@@ -172,6 +169,7 @@ svg#bigTriangleColor {
 #bigTriangleColor path {
     fill: var(--primary-color);
 }
+.hero__img,
 .aboutUs__img,
 .location__img,
 .conocenos__img,
@@ -180,9 +178,11 @@ svg#bigTriangleColor {
     border-radius: var(--mb-05);
 }
 .about__container{
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    row-gap: 2rem;
     place-items: center;
+}
+.about__data{
+    text-align: center;
 }
 .about__description{
     margin-bottom: var(--mb-1);
@@ -198,18 +198,18 @@ svg#bigTriangleColor {
     margin-right: var(--mb-05);
 }
 .about__item:not(:last-child){
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb-2);
 }
 .about__item__title{
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 .about__subtitle{
     margin: 0;
 }
 .services__items{
-    grid-template-columns: repeat(3 , 1fr);
-    column-gap: 1rem;
+    row-gap: 2.5rem;
     padding-top: 3rem;
 }
 .services__img{
@@ -222,34 +222,34 @@ svg#bigTriangleColor {
 .services__title{
     text-align: center;
 }
+.location__description,
 .services__description{
     color: var(--paragraph-color);
 }
 .location__container,
 .aboutUs__container{
-    grid-template-columns: repeat(2 , 1fr);
-    column-gap: 1rem;
+    row-gap: 2.5rem;
 }
 .location__data,
 .aboutUS__data{
-    align-items: flex-start;
+    align-items: center;
     order: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-around
+    justify-content: space-around;
 }
 .team__description,
 .aboutUS__description{
     margin-bottom: var(--mb-1);
     color: var(--paragraph-color);
+    text-align: center;
 }
 .aboutUS__description:nth-child(3){
     margin-bottom: var(--mb-2);
 }
 .testimonial__items,
 .team__container{
-    grid-template-columns: repeat(4 , 1fr);
-    column-gap: 1rem;
+    row-gap: 2rem;
     padding-top: 3rem;
 }
 .testimonial__title,
@@ -258,7 +258,6 @@ svg#bigTriangleColor {
 .testimonial__3,
 .testimonial__4{
     text-align: center;
-
 }
 .testimonial__img{
     width: 150px;
@@ -272,23 +271,21 @@ svg#bigTriangleColor {
     color: var(--white);
 }
 .footer__container{
-    grid-template-columns: repeat(3 , 1fr);
-    column-gap: 1rem;
+    row-gap: 2rem;
 }
 .footer__logo{
     margin-bottom: var(--mb-1);
 }
 .location__item,
-.footer__list{
+.footer__list:nth-child(3){
     display: flex;
-    column-gap: 2.5rem;
+    column-gap: 3.5rem;
 }
 .footer__link{
     color: var(--white);
 }
 .footer__icon{
     font-size: 1.5rem;
-
 }
 .footer__link:hover,
 .footer__icon:hover{
@@ -298,6 +295,70 @@ svg#bigTriangleColor {
     text-align: center;
     padding-top: 4rem;
 }
+/* ------medium divices-------- */
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 767px){
+    .nav{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav__list{
+        flex-direction: row;
+        column-gap: 2.625rem;
+    }
+    .conocenos__container,
+    .hero__container{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+    }
+    .hero__data{
+        text-align: end;
+        align-items: end;
+    }
+    .about__container{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+    .about__data{
+        text-align: start;
+    }
+    .about__item__title{
+        flex-direction: row;
+    }
+    .services__items{
+        grid-template-columns: repeat(3 , 1fr);
+        column-gap: 1rem;
+    }
+    .location__container,
+    .aboutUs__container{
+    grid-template-columns: repeat(2 , 1fr);
+    column-gap: 1rem;
+    }
+    .location__data,
+    .aboutUS__data{
+    align-items: flex-start;
+    justify-content: space-around
+    }
+    .testimonial__items,
+    .team__container{
+    grid-template-columns: repeat(4 , 1fr);
+    column-gap: 1rem;
+    }
+    .footer__container{
+        grid-template-columns: repeat(3 , 1fr);
+        column-gap: 2.5rem;
+    }
+    .footer__list{
+        display: flex;
+        column-gap: 3.5rem;
+    }
+
+}
+
 .conocenos{
     padding: 5rem 0 2rem;
 }
@@ -313,6 +374,7 @@ svg#bigTriangleColor {
     text-align: center;
 }
 .team__img{
+    margin: 0 auto;
     border-radius: var(--mb-05);
     margin-bottom: var(--mb-1);
 }
